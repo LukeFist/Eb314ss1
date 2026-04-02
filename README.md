@@ -26,13 +26,17 @@ Repository for storing results from genome analysis - Sample Eb314ss1
 ---
 
 ## 1. Assess Sequence Quality with FASTQC
-* **Raw Reads (Single End):** 6,615,883
+* **Raw Reads (Paired End):** 6,615,883 pairs
 
 ## 2. Trim Adaptors and Poor Quality Sequence with Trimmomatic
+*Commands for quality assessment and trimming can be found in the script: **[sequence_data_quality_assessment_and_trimming.sh](./modules/sequence_data_quality_assessment_and_trimming.sh)***
+
 * **Cleaned Reads Used for Assembly:** 5,906,576
 * **Total Bases in Cleaned Reads:** 1,780,327,732
 
 ## 3. Generate an Optimized MyGenome Assembly using Velvet and SPAdes
+*Commands for genome assembly can be found in the script: **[genome_assembly.sh](./modules/genome_assembly.sh)***
+
 Based on k-mer optimization and algorithm comparison, the following assembly metrics were produced:
 All N50 calculated using **[calculate_n50.sh](./calculate_n50.sh)**
 
