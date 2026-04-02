@@ -9,23 +9,15 @@
 
 echo "--- Step 3: Quality Assessment and Trimming ---"
 
-# --- 3.1 Download Sequence Data ---
-# The original data files were likely downloaded using wget or curl.
-# NOTE: Based on the SPAdes parameters in the README, we assume the data is PAIRED-END.
-# Please replace the URL with the actual source for your data.
 
-echo "Downloading raw sequence data..."
-wget http://your-class-server.edu/path/to/Eb314ss1_1.fastq.gz
-wget http://your-class-server.edu/path/to/Eb314ss1_2.fastq.gz
-
-# --- 3.2 Assess Raw Sequence Quality with FASTQC ---
+# --- 3.1 Assess Raw Sequence Quality with FASTQC ---
 # Run FASTQC on the original, untrimmed reads to check initial quality.
 
 echo "Running FASTQC on raw reads..."
 mkdir -p fastqc_raw
 fastqc -o fastqc_raw Eb314ss1_1.fastq.gz Eb314ss1_2.fastq.gz
 
-# --- 3.3 Trim Adaptors and Poor Quality Sequence with Trimmomatic ---
+# --- 3.2 Trim Adaptors and Poor Quality Sequence with Trimmomatic ---
 # Use Trimmomatic to remove adaptors and low-quality bases.
 # This command is for paired-end data and will produce four output files:
 # two for the surviving paired reads, and two for reads that became unpaired.

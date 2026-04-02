@@ -12,11 +12,10 @@ echo "--- Step 4: Genome Assembly ---"
 # --- 4.1 Transfer Data to MCC ---
 # Use scp (Secure Copy) to transfer the cleaned read files to a remote
 # high-performance computing cluster.
-# NOTE: Replace 'username' and 'mcc.cluster.edu' with your actual credentials.
 
 echo "Transferring cleaned reads to cluster..."
-scp Eb314ss1_*_paired.fastq.gz username@mcc.cluster.edu:/path/to/project/dir/
-scp Eb314ss1_*_unpaired.fastq.gz username@mcc.cluster.edu:/path/to/project/dir/
+scp Eb314ss1_*_paired.fastq.gz lefi229@MCC.uky.edu:/path/to/project/dir/
+scp Eb314ss1_*_unpaired.fastq.gz lefi229@MCC.uky.edu:/path/to/project/dir/
 
 # --- 4.2 Run Genome Assemblies ---
 # The following commands would be run on the remote cluster.
