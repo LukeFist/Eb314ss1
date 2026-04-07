@@ -40,6 +40,7 @@ FASTQC generates HTML reports for each input file. The reports below show qualit
 
 - [Eb314ss1_1_fastqc.html](FastqcHTML/Eb314ss1_1_fastqc.html)
 - [Eb314ss1_2_fastqc.html](FastqcHTML/Eb314ss1_2_fastqc.html)
+- [Eb314ss1_Pretrimmed.pdf](FastqcResults/Eb314ss1_Pretrimmed.pdf)
 
 ### Post-Trimming Reports
 
@@ -47,3 +48,4 @@ FASTQC generates HTML reports for each input file. The reports below show qualit
 - [Eb314ss1_1_unpaired_fastqc.html](FastqcHTML/Eb314ss1_1_unpaired_fastqc.html)
 - [Eb314ss1_2_paired_fastqc.html](FastqcHTML/Eb314ss1_2_paired_fastqc.html)
 - [Eb314ss1_2_unpaired_fastqc.html](FastqcHTML/Eb314ss1_2_unpaired_fastqc.html)
+- [Eb314ss1_1_paired.pdf](FastqcResults/Eb314ss1_1_paired.pdf)
