@@ -14,7 +14,6 @@ Repository for storing results from genome analysis - Sample Eb314ss1
 
 ---
 
-
 # Table of Contents
 
 1. [Assess Sequence Quality with FASTQC](#1-assess-sequence-quality-with-fastqc)
@@ -26,34 +25,77 @@ Repository for storing results from genome analysis - Sample Eb314ss1
 ---
 
 ## 1. Assess Sequence Quality with FASTQC
+
+Raw paired-end reads were assessed for quality metrics (per-base quality, GC content, adapter content, etc.) using FASTQC before any trimming.
+
+*Commands: [Sequence%20Data,%20Quality%20Assessment%20and%20Trimming_commands.md § 2.1](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/Sequence%20Data,%20Quality%20Assessment%20and%20Trimming_commands.md)*
+
 * **Raw Reads (Paired End):** 6,615,883 pairs
 
+**FASTQC Reports (Raw):**
+
+| Report | Link |
+| :--- | :--- |
+| Read 1 | [Eb314ss1_1_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_1_fastqc.html) |
+| Read 2 | [Eb314ss1_2_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_2_fastqc.html) |
+
+---
+
 ## 2. Trim Adaptors and Poor Quality Sequence with Trimmomatic
-*Commands for quality assessment and trimming can be found in the script: **[sequence_data_quality_assessment_and_trimming.sh](./modules/sequence_data_quality_assessment_and_trimming.sh)***
+
+Paired-end reads were trimmed to remove Illumina adapters and low-quality bases using Trimmomatic, producing cleaned paired and unpaired output files.
+
+*Commands: [Sequence%20Data,%20Quality%20Assessment%20and%20Trimming_commands.md § 2.2](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/Sequence%20Data,%20Quality%20Assessment%20and%20Trimming_commands.md)*
 
 * **Cleaned Reads Used for Assembly:** 5,906,576
 * **Total Bases in Cleaned Reads:** 1,780,327,732
 
+**FASTQC Reports (Post-Trimming):**
+
+| Report | Link |
+| :--- | :--- |
+| Read 1 Paired | [Eb314ss1_1_paired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_1_paired_fastqc.html) |
+| Read 1 Unpaired | [Eb314ss1_1_unpaired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_1_unpaired_fastqc.html) |
+| Read 2 Paired | [Eb314ss1_2_paired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_2_paired_fastqc.html) |
+| Read 2 Unpaired | [Eb314ss1_2_unpaired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_2_unpaired_fastqc.html) |
+
+---
+
 ## 3. Generate an Optimized MyGenome Assembly using Velvet and SPAdes
-*Commands for genome assembly can be found in the script: **[genome_assembly.sh](./modules/genome_assembly.sh)***
 
-Based on k-mer optimization and algorithm comparison, the following assembly metrics were produced:
-All N50 calculated using **[calculate_n50.sh](./calculate_n50.sh)**
+Cleaned reads were assembled into contigs using both Velvet and SPAdes. Multiple k-mer values and read input combinations were tested to identify the best assembly by N50.
 
-| Metric | Velvet (k=10) | Velvet (k=2) | SPAdes (Paired+Unpaired) | SPAdes (Paired Only) |
+*Commands: [Genome%20Assembly%20%26%20Cleanup_commands.md § 4.2](./Genome%20Assembly%20%26%20Cleanup/Genome%20Assembly%20%26%20Cleanup_commands.md)*
+
+All N50 values calculated using **[calculate_n50.sh](./calculate_n50.sh)**
+
+| Metric | Velvet (k=83) | Velvet (k=93) | SPAdes (Paired+Unpaired) | SPAdes (Paired Only) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Recommended k-mer** | 83 | 93 | Default | Default |
 | **Genome Size** | 40,297,917 | 40,380,887 | 40,388,759 | 40,341,516 |
 | **# Contigs** | 3,370 | 3,880 | 4,597 | 4,168 |
 | **N50 Value** | 116,385 | 124,822 | 202,513 | 233,912 |
 
+![Entire Graph - Best Genome SPAdes](./Genome%20Assembly%20%26%20Cleanup/EntireGraphBestGenomeSpades.png)
+
+---
+
 ## 4. Perform Genome Post-Processing for NCBI Submission
+
+The best assembly (SPAdes Paired Only) was filtered to remove short contigs, producing a final cleaned genome submitted to NCBI.
+
+*Commands: [Genome%20Assembly%20%26%20Cleanup_commands.md § 4.3](./Genome%20Assembly%20%26%20Cleanup/Genome%20Assembly%20%26%20Cleanup_commands.md)*
+
 * **Assembly Accession #:** SUB15999145 (Temporary)
 * **Final Cleaned Genome Size:** 40,137,340
 * **Final Contig Count:** 2,492
-* **Final N50:** 232,638 
+* **Final N50:** 232,638
+
+---
 
 ## 5. Assess Genome Quality using BUSCO
+
+BUSCO evaluated the completeness of the final assembly by searching for conserved single-copy orthologs against a reference database.
+
 * **Fold Coverage:** 44.36
 * **BUSCO Score (%):** 98.60%
 * **BUSCO Score (Complete + Fragmented) (%):** 98.60%
