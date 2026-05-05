@@ -110,7 +110,37 @@ BUSCO evaluated the completeness of the final assembly by searching for conserve
 <summary>BUSCO <code>short_summary</code> excerpt</summary>
 
 ```
-<!-- INSERT contents of short_summary*.txt here -->
+# BUSCO version is: 5.7.0
+# The lineage dataset is: ascomycota_odb10 (Creation date: 2024-01-08, number of genomes: 365, number of BUSCOs: 1706)
+# Summarized benchmarking in BUSCO notation for file /project/farman_s26abt480/lefi229/Eb314ss1/Eb314ss1_final.fasta
+# BUSCO was run in mode: euk_genome_min
+# Gene predictor used: miniprot
+
+        ***** Results: *****
+
+        C:98.6%[S:98.3%,D:0.3%],F:0.0%,M:1.4%,n:1706,E:3.9%
+        1682    Complete BUSCOs (C)     (of which 65 contain internal stop codons)
+        1677    Complete and single-copy BUSCOs (S)
+        5       Complete and duplicated BUSCOs (D)
+        0       Fragmented BUSCOs (F)
+        24      Missing BUSCOs (M)
+        1706    Total BUSCO groups searched
+
+Assembly Statistics:
+        2492    Number of scaffolds
+        2568    Number of contigs
+        40137340        Total length
+        0.013%  Percent gaps
+        232 KB  Scaffold N50
+        179 KB  Contigs N50
+
+Dependencies and versions:
+        hmmsearch: 3.1
+        bbtools: 39.06
+        miniprot_index: 0.13-r248
+        miniprot_align: 0.13-r248
+        python: sys.version_info(major=3, minor=7, micro=12, releaselevel='final', serial=0)
+        busco: 5.7.0
 ```
 
 </details>
@@ -255,29 +285,28 @@ All four tracks were loaded into IGV for comparison:
 
 #### Gene predicted only by SNAP
 
-<!-- INSERT IGV SCREENSHOT HERE -->
-<!-- Coordinates: contig:start-end -->
+![alt text](image.png)
+contig1:555846-556197
 
 ---
 
 #### Gene predicted only by AUGUSTUS
 
-<!-- INSERT IGV SCREENSHOT HERE -->
-<!-- Coordinates: contig:start-end -->
-
+![alt text](image-1.png)
+contig1:1703850-1704328
 ---
 
 #### Gene where SNAP and AUGUSTUS predict the same exon/intron structure
 
-<!-- INSERT IGV SCREENSHOT HERE -->
-<!-- Coordinates: contig:start-end -->
+![alt text](image-2.png)
+contig1:1588496-1589518
 
 ---
 
 #### Gene where SNAP and AUGUSTUS predict a different exon/intron structure
 
-<!-- INSERT IGV SCREENSHOT HERE -->
-<!-- Coordinates: contig:start-end -->
+![alt text](image-3.png)
+contig1:522509-524073
 
 ---
 
@@ -377,5 +406,5 @@ Chr1    .    blast    1408887    1433782    .    -    .    ID=Eb314ss1_contig11
 
 The B71 reference was loaded into IGV with `B71_alignments.gff3` as a feature track to visualize chromosome regions lacking matches in Eb314ss1.
 
-<!-- INSERT IGV SCREENSHOT of largest B71 unique sequence block (with coordinate boundaries visible) -->
+![alt text](image-4.png)
 <!-- Coordinates: chrN:start-end -->
