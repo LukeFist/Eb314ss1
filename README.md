@@ -310,11 +310,17 @@ contig1:522509-524073
 
 ---
 
-#### Gene successfully predicted by SNAP, AUGUSTUS, and MAKER with supporting external evidence
+#### Gene successfully predicted by SNAP, AUGUSTUS, and MAKER supported by RNA Seq Reads
 
-<!-- INSERT IGV SCREENSHOT HERE -->
-<!-- Coordinates: contig:start-end -->
-<!-- Note: external evidence track (protein alignment or EST) visible in IGV confirming the prediction -->
+![alt text](image-5.png)
+contig1:915539-916615
+
+---
+
+#### Gene showing strong prediction inPlanta, but not inCulture
+
+![alt text](image-6.png)
+contig1:981489-982843
 
 ---
 
@@ -407,4 +413,4 @@ Chr1    .    blast    1408887    1433782    .    -    .    ID=Eb314ss1_contig11
 The B71 reference was loaded into IGV with `B71_alignments.gff3` as a feature track to visualize chromosome regions lacking matches in Eb314ss1.
 
 ![alt text](image-4.png)
-<!-- Coordinates: chrN:start-end -->
+Chromosome8:981408-1003073

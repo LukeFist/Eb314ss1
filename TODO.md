@@ -1,40 +1,56 @@
 # MyGenome Notebook — Outstanding TODOs
 
-Every `<!-- INSERT ... -->` placeholder in `README.md` and the `*_commands.md` files maps to one entry below. Check the box once the placeholder is filled.
+Tracks remaining work for the class notebook. Each section is required to include: objectives, steps performed, code/commands, embedded images, and links to large files/output files.
 
 ---
 
-## Images / Screenshots
+## Priority 1 — Class Deliverables (deadline-driven)
 
-- [ ] **§6.4 IGV — gene predicted only by SNAP**: capture screenshot, record `contig:start-end`, save to `./Gene Prediction/igv/snap_only.png`
-- [ ] **§6.4 IGV — gene predicted only by AUGUSTUS**: capture screenshot, record `contig:start-end`, save to `./Gene Prediction/igv/augustus_only.png`
-- [ ] **§6.4 IGV — SNAP + AUGUSTUS same exon/intron structure**: capture screenshot, record `contig:start-end`, save to `./Gene Prediction/igv/snap_augustus_same.png`
-- [ ] **§6.4 IGV — SNAP + AUGUSTUS different exon/intron structure**: capture screenshot, record `contig:start-end`, save to `./Gene Prediction/igv/snap_augustus_different.png`
-- [ ] **§6.4 IGV — SNAP + AUGUSTUS + MAKER + external evidence**: capture screenshot, record `contig:start-end`, save to `./Gene Prediction/igv/snap_augustus_maker_evidence.png`
-- [ ] **§7.4 IGV — largest B71 unique sequence block**: capture screenshot showing coordinate boundaries, save to `./Genome Interrogation using BLAST/igv/B71_unique_block.png`
+- [ ] **Class Worksheet**: enter # of MAKER-predicted gene models → **12,882** (from [README §6.3](README.md#63-maker--consensus-annotation))
+- [ ] **MCC Server**: copy `Eb314ss1-maker.gff3` → `CLASS_GFFs/` directory
+- [ ] **MCC Server**: copy `Eb314ss1.all.maker.proteins.fasta` → `CLASS_PROTEINs/` directory
 
-## Numeric Results / Tables
+## Priority 2 — Last Remaining IGV Screenshot
 
-- [ ] **§5 BUSCO**: paste `short_summary*.txt` excerpt into the `<details>` block in README §5 **and** into BUSCO commands § 3
-- [ ] **§5 BUSCO**: paste sample `slurm-XXXXXXX.out` tail into the `<details>` block in BUSCO commands § 2
-- [ ] **§6.1 SNAP**: number of predicted genes from `fathom -gene-stats` output → fill table in README §6.1 **and** paste output into Gene Prediction commands SNAP `<details>`
-- [ ] **§6.2 AUGUSTUS**: number of predicted genes from GFF3 output → fill table in README §6.2 **and** paste count into Gene Prediction commands AUGUSTUS `<details>`
-- [ ] **§6.3 MAKER**: gene count from `awk '$3 == "gene"' igvFiles/Eb314ss1-maker.gff3 | wc -l` → fill table in README §6.3 **and** paste into Gene Prediction commands MAKER gene-count `<details>`
-- [ ] **§6.3 MAKER**: protein count from `grep -c "^>" Eb314ss1.all.maker.proteins.fasta` (must match gene count) → fill table in README §6.3 **and** paste into Gene Prediction commands MAKER protein-count `<details>`
-- [ ] **§4 NCBI Post-Processing**: paste slurm output / `seqkit stats Eb314ss1_final.fasta` into the `<details>` block in Post-Processing commands § 1
-- [ ] **§4 / §7.1 Mito BLAST**: paste `head -n 10 MoMitochondrion.Eb314ss1.BLAST` excerpt into Post-Processing commands § 2 `<details>`
-- [ ] **§4 / §7.1 Mito CSV head**: paste `cat Eb314ss1_mitochondrion.csv` contents into Post-Processing commands § 2 `<details>`
-- [ ] **§4 / §7.1 Short mito hits head**: paste `head -n 10 Eb314ss1_short_mitochondrial_hits.txt` excerpt into Post-Processing commands § 2 `<details>`
+- [ ] **§6.4 IGV — SNAP + AUGUSTUS + MAKER + external evidence**: capture screenshot, record `contig:start-end`, save to `./Gene Prediction/igv/snap_augustus_maker_evidence.png`, replace placeholder at [README.md:315](README.md#L315)
+- [ ] **§7.4 IGV — record coordinates** for `image-4.png` (largest B71 unique sequence block) at [README.md:410](README.md#L410)
 
-## Code Snippets / Commands
+## Priority 3 — Files to Upload & Link
 
-- [ ] **§2.1 Sequence Data commands**: exact `scp` command used to download raw reads from the course server (replace the `# TODO` placeholder in `Sequence Data, Quality Assessment and Trimming_commands.md` § 2.1)
-- [ ] **§5 BUSCO commands**: paste contents of `BuscoSingularity.sh` (or link to a copy in the repo) into `Assess Genome Quality using BUSCO_commands.md` § 1
+These are blockers for several `<!-- INSERT path ... -->` placeholders in the README.
 
-## Files to Upload / Link
+- [ ] **§5 BUSCO**: upload `short_summary*.txt` to `./Assess Genome Quality using BUSCO/`, link from [README.md:148](README.md#L148) and BUSCO commands § 3
+- [ ] **§7.1 Mitochondrial CSV**: upload `Eb314ss1_mitochondrion.csv` to `./Genome Post Processing for NCBI submission/`, link from [README.md:339](README.md#L339)
+- [ ] **§7.1 Short mito hits**: upload `Eb314ss1_short_mitochondrial_hits.txt` to same folder, link from [README.md:340](README.md#L340)
+- [ ] **§7.2 Contig list**: upload list of Eb314ss1 contigs lacking B71 matches to `./Genome Interrogation using BLAST/`, link from [README.md:360](README.md#L360)
+  - Generated by: `grep -B 2 "0 hits found" ... | grep "Query"`
+- [ ] **§7.3 GFF3**: upload `B71_alignments.gff3` to `./Genome Interrogation using BLAST/`, link from [README.md:401](README.md#L401)
 
-- [ ] **§5 BUSCO**: upload `short_summary*.txt` to `./Assess Genome Quality using BUSCO/` and link from README §5 + commands file § 3
-- [ ] **§7.1 Mitochondrial CSV**: upload `Eb314ss1_mitochondrion.csv` to `./Genome Post Processing for NCBI submission/` and link from README §7.1 + commands file § 2
-- [ ] **§7.1 Short mito hits**: upload `Eb314ss1_short_mitochondrial_hits.txt` to `./Genome Post Processing for NCBI submission/` and link from README §7.1 + commands file § 2
-- [ ] **§7.2 Contig list**: upload list of Eb314ss1 contigs lacking B71 matches (output of `grep -B 2 "0 hits found" ... | grep "Query"`) to `./Genome Interrogation using BLAST/` and link from README §7.2
-- [ ] **§7.3 GFF3**: upload `B71_alignments.gff3` to `./Genome Interrogation using BLAST/` and link from README §7.3
+## Priority 4 — Remaining Numeric / Text Fills
+
+- [ ] **§6.3 MAKER protein count**: run `grep -c "^>" Eb314ss1.all.maker.proteins.fasta`, fill in [README.md:272](README.md#L272) (must match gene count of 12,882)
+- [ ] **§1/§2 Embedded quality plots**: README currently only *links* FASTQC HTML/PDF reports. Add embedded pre- and post-trimming quality-plot screenshots to README §1 and §2 (per-base quality summary plot is the standard one).
+
+## Priority 5 — Commands File `<details>` Blocks
+
+These don't block the README but complete the commands documentation.
+
+- [ ] **Sequence Data commands § 2.1**: paste exact `scp` command (replace `# TODO` at [Sequence Data commands:10](Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/Sequence%20Data,%20Quality%20Assessment%20and%20Trimming_commands.md#L10))
+- [ ] **BUSCO commands § 1**: paste contents of `BuscoSingularity.sh` (or link to in-repo copy)
+- [ ] **BUSCO commands § 2**: paste sample `slurm-XXXXXXX.out` tail
+- [ ] **BUSCO commands § 3**: paste `short_summary*.txt` excerpt (mirror of README §5 block)
+- [ ] **Gene Prediction commands**: paste `fathom -gene-stats` SNAP output, AUGUSTUS gene count output, MAKER `awk` count output, MAKER `fasta_merge` count output
+- [ ] **Post-Processing commands § 1**: paste slurm output / `seqkit stats Eb314ss1_final.fasta`
+- [ ] **Post-Processing commands § 2**: paste `head -n 10 MoMitochondrion.Eb314ss1.BLAST`, `cat Eb314ss1_mitochondrion.csv`, `head -n 10 Eb314ss1_short_mitochondrial_hits.txt`
+
+---
+
+## Recently Completed ✓
+
+- [x] Added IGV screenshots for: SNAP-only, AUGUSTUS-only, SNAP+AUGUSTUS same structure, SNAP+AUGUSTUS different structure, B71 unique block (image-4.png)
+- [x] Filled gene count tables: SNAP (12,485), AUGUSTUS (17,447), MAKER (12,882)
+- [x] BUSCO short_summary excerpt embedded in README §5
+- [x] Eb314ss1 contigs lacking B71 matches: 1,111 (filled in §7.2)
+- [x] Documentation links normalized (README ↔ commands split)
+- [x] Bandage assembly graph embedded in §3
+- [x] Assembly metrics table (Velvet k=83/93, SPAdes paired/all) in §3
