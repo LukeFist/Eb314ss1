@@ -40,7 +40,9 @@ Raw paired-end reads were assessed for quality metrics (per-base quality, GC con
 | :--- | :--- |
 | Read 1 | [Eb314ss1_1_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_1_fastqc.html) |
 | Read 2 | [Eb314ss1_2_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_2_fastqc.html) |
-| Results PDF | [Eb314ss1_Pretrimmed.pdf](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcResults/Eb314ss1_Pretrimmed.pdf) |
+
+Pre-trimmed Results
+![alt text](image-7.png)
 
 ---
 
@@ -61,7 +63,9 @@ Paired-end reads were trimmed to remove Illumina adapters and low-quality bases 
 | Read 1 Unpaired | [Eb314ss1_1_unpaired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_1_unpaired_fastqc.html) |
 | Read 2 Paired | [Eb314ss1_2_paired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_2_paired_fastqc.html) |
 | Read 2 Unpaired | [Eb314ss1_2_unpaired_fastqc.html](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcHTML/Eb314ss1_2_unpaired_fastqc.html) |
-| Results PDF | [Eb314ss1_1_paired.pdf](./Sequence%20Data,%20Quality%20Assessment%20and%20Trimming/FastqcResults/Eb314ss1_1_paired.pdf) |
+
+Post-Trimmed Results
+![alt text](image-8.png)
 
 ---
 
