@@ -16,7 +16,7 @@ Repository for storing results from genome analysis - Sample Eb314ss1
 | **Layout** | Paired-end |
 | **Platform / Instrument** | Illumina / NovaSeq X |
 | **Library Prep** | Twist Library Preparation EF2.0 with Enzymatic Fragmentation |
-| **Raw Read Files** | [Eb314ss1_1.fq.gz](./Raw%20Reads/Eb314ss1_1.fq.gz), [Eb314ss1_2.fq.gz](./Raw%20Reads/Eb314ss1_2.fq.gz) |
+| **Raw Read Files** | [Eb314ss1_1.fq.gz], [Eb314ss1_2.fq.gz] |
 
 ---
 
