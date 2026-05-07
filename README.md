@@ -10,7 +10,13 @@ Repository for storing results from genome analysis - Sample Eb314ss1
 | **Researcher** | Fister, Luke |
 | **Link/ID** | lefi229 |
 | **Sample Name** | Eb314ss1 |
-| **Assembly Accession #** | SUB15999145 |
+| **NCBI Assembly Accession #** | SUB15999145 |
+| **NCBI SRA Run Accession** | SRR37267536 |
+| **Library Strategy / Source / Selection** | WGS / genomic / random |
+| **Layout** | Paired-end |
+| **Platform / Instrument** | Illumina / NovaSeq X |
+| **Library Prep** | Twist Library Preparation EF2.0 with Enzymatic Fragmentation |
+| **Raw Read Files** | [Eb314ss1_1.fq.gz](./Raw%20Reads/Eb314ss1_1.fq.gz), [Eb314ss1_2.fq.gz](./Raw%20Reads/Eb314ss1_2.fq.gz) |
 
 ---
 
