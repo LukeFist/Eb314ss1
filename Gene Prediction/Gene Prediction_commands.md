@@ -57,13 +57,13 @@ augustus --species=magnaporthe_grisea --gff3=on \
 
 ## MAKER
 
-Combine SNAP, AUGUSTUS, and protein evidence into a consensus annotation.
+Combine SNAP, AUGUSTUS, and protein evidence into a consensus annotation. SLURM script: [maker.sh](../scripts/maker.sh).
 
 ```bash
 # Generate config files, then edit maker_opts.ctl with settings below
 singularity exec /share/singularity/images/ccs/MAKER/amd-maker-debian10.sinf maker -CTL
 
-# Submit job
+# Submit job (SLURM script: ../scripts/maker.sh)
 sbatch maker.sh /project/farman_s26abt480/lefi229/Eb314ss1/Eb314ss1_final.fasta
 
 # Monitor progress

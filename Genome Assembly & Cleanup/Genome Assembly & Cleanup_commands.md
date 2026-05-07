@@ -23,25 +23,33 @@ Velvet requires interleaved paired-end reads. A helper script is used to produce
 shuffleSequences_fastq.pl Eb314ss1_1_paired.fastq.gz Eb314ss1_2_paired.fastq.gz interleaved.fastq
 ```
 
-### Velvet Assembly (k=83)
+### Velvet Assembly via VelvetOptimiser
 
-Using k=83 based on the "Recommended k-mer" value in the README.
+Velvet k-mer sweeps were submitted via SLURM script [velvetoptimiser.sh](../scripts/velvetoptimiser.sh), which wraps `VelvetOptimiser.pl` in singularity. The script accepts `strainID lowK highK step` and produces an output directory `velvet_<strainID>_<lowK>_<highK>_<step>_noclean/`. The two best assemblies in the README §3 table (k=83 and k=93) were drawn from this sweep.
+
+```bash
+sbatch velvetoptimiser.sh Eb314ss1 71 99 2
+```
+
+The equivalent manual invocations (for reference) are:
 
 ```bash
 velveth velvet_k83 83 -fastq -shortPaired interleaved.fastq
 velvetg velvet_k83 -exp_cov auto -cov_cutoff auto
-```
 
-### Velvet Assembly (k=93)
-
-Using k=93 based on the "Recommended k-mer" value in the README.
-
-```bash
 velveth velvet_k93 93 -fastq -shortPaired interleaved.fastq
 velvetg velvet_k93 -exp_cov auto -cov_cutoff auto
 ```
 
 ### SPAdes Assembly (Paired + Unpaired)
+
+Submitted via SLURM script [spades.sh](../scripts/spades.sh) (paired + unpaired reads).
+
+```bash
+sbatch spades.sh /path/to/readsdir Eb314ss1
+```
+
+Equivalent direct invocation:
 
 ```bash
 spades.py --careful -t 8 -m 64 \
@@ -52,7 +60,13 @@ spades.py --careful -t 8 -m 64 \
 
 ### SPAdes Assembly (Paired Only)
 
-This assembly produced the best N50 value according to the README.
+Submitted via SLURM script [spades-paired.sh](../scripts/spades-paired.sh). This assembly produced the best N50 value.
+
+```bash
+sbatch spades-paired.sh /path/to/readsdir Eb314ss1
+```
+
+Equivalent direct invocation:
 
 ```bash
 spades.py --careful -t 8 -m 64 \

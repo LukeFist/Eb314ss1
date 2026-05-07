@@ -93,7 +93,7 @@ Chr1    .    blast    864431     891547     .    -    .    ID=Eb314ss1_contig11
 Chr1    .    blast    1408887    1433782    .    -    .    ID=Eb314ss1_contig11
 ```
 
-Full GFF3: <!-- INSERT path to B71_alignments.gff3 once uploaded -->
+Full GFF3: [B71_alignments.gff3](./B71_alignments.gff3)
 
 </details>
 

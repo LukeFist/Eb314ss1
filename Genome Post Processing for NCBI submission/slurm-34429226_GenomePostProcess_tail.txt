@@ -1,0 +1,30 @@
+[job log_step] Max memory used: 35MiB
+[job log_step] completed success
+[step log_step] completed success
+[workflow GenerateReport] starting step calls_step
+[step calls_step] start
+[job calls_step] /tmp/nvunouyp$ pbcalls2tsv < /tmp/gr8qt8yt/stg26a46200-9025-4d64-849e-91a3ae05c368/combined.calls.jsonl > /tmp/nvunouyp/fcs_adaptor_report.txt
+[job calls_step] Max memory used: 17MiB
+[job calls_step] completed success
+[step calls_step] completed success
+[workflow GenerateReport] completed success
+[step GenerateReport] completed success
+[workflow ] completed success
+Output will be placed in: /output-volume
+Executing the workflow
+
+--------------------------------------------------------------------------------------------
+
+NCBI collects limited usage data for each run of FCS by default. To disable usage reporting:
+
+python3 fcs.py --no-report-analytics ...
+
+or export NCBI_FCS_REPORT_ANALYTICS=1 to enable,
+or export NCBI_FCS_REPORT_ANALYTICS=0 to disable the reporting.
+
+Usage data collected by NCBI is documented in the FCS privacy notice
+at https://github.com/ncbi/fcs/blob/main/PRIVACY.md
+
+--------------------------------------------------------------------------------------------
+Warning: Ns at the beginning or end of the sequence: >Eb314ss1_contig24
+Applied 0 actions; 0 seqs dropped; 0 bps dropped; 0 bps lowercased; 0 bps hardmasked.

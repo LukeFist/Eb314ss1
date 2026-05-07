@@ -268,8 +268,8 @@ grep -c "^>" Eb314ss1.all.maker.proteins.fasta
 
 | Metric | Value |
 | :--- | :--- |
-| **Number of Predicted Genes** (from `awk '$3 == "gene"'` count) | 12,882 |
-| **Number of Predicted Proteins** (from `fasta_merge` count, should match) | <!-- INSERT NUMBER FROM proteins.fasta --> |
+| **Number of Predicted Genes**  | 12,882 |
+| **Number of Predicted Proteins**  | 12,882|
 
 ---
 
@@ -342,7 +342,7 @@ Contigs covered ≥90% by hits to `MoMitochondrion.fasta` were exported as the N
 
 | Output | Link |
 | :--- | :--- |
-| Mitochondrial CSV (submitted to NCBI) | <!-- INSERT path to Eb314ss1_mitochondrion.csv once uploaded --> |
+| Mitochondrial CSV (submitted to NCBI) | [Eb314ss1_mitochondrion.csv](./Genome%20Post%20Processing%20for%20NCBI%20submission/Eb314ss1_mitochondrion.csv) |
 | Short hits (manual review) | <!-- INSERT path to Eb314ss1_short_mitochondrial_hits.txt once uploaded --> |
 
 ---
@@ -404,7 +404,7 @@ Chr1    .    blast    1408887    1433782    .    -    .    ID=Eb314ss1_contig11
 
 | Output | Link |
 | :--- | :--- |
-| Full BLAST GFF3 | <!-- INSERT path to B71_alignments.gff3 once uploaded --> |
+| Full BLAST GFF3 | [B71_alignments.gff3](./Genome%20Interrogation%20using%20BLAST/B71_alignments.gff3) |
 
 ---
 
